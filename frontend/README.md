@@ -1,73 +1,145 @@
-# React + TypeScript + Vite
+# Algorithmic Explorers — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend for the **Algorithmic Explorers Website**, built with **React**, **TypeScript**, and **Vite**.  
+Includes **Tailwind CSS**, **React Router**, **Framer Motion**, and **Swiper** for UI/animations and carousel components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+- **React + TypeScript** (UI + type safety)
+- **Vite** (dev server + builds)
+- **Tailwind CSS** (utility-first styling)
+- **react-router-dom** (routing)
+- **framer-motion** (animations)
+- **swiper** (carousel/swiper components)
+- **ESLint** (linting)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- **Node.js** (recommended: latest LTS)
+- **npm**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install dependencies
+```bash
+cd frontend
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Run the dev server
+```bash
+npm run dev
 ```
+
+### Build for production
+```bash
+npm run build
+```
+
+### Preview the production build
+```bash
+npm run preview
+```
+
+### Lint
+```bash
+npm run lint
+```
+
+---
+
+## Available Scripts
+
+From `frontend/package.json`:
+
+- `npm run dev` – start Vite dev server
+- `npm run build` – typecheck + build
+- `npm run preview` – preview production build locally
+- `npm run lint` – run ESLint
+
+---
+
+## Project Structure
+
+```text
+frontend/
+├─ .gitignore
+├─ README.md
+├─ eslint.config.js
+├─ index.html
+├─ next-arrow.png
+├─ package-lock.json
+├─ package.json
+├─ tsconfig.json
+├─ tsconfig.app.json
+├─ tsconfig.node.json
+├─ vite.config.ts
+├─ public/
+│  ├─ background.jpg
+│  ├─ badge 1.png
+│  ├─ badge 2.png
+│  ├─ badge 3.png
+│  ├─ btn-members.png
+│  ├─ chart.png
+│  ├─ descript-logo.png
+│  ├─ favicon.png
+│  ├─ ghana 1.png
+│  ├─ Grammarly-logo.png
+│  ├─ guru-preview.png
+│  ├─ image.png
+│  ├─ Intercom-logo.png
+│  ├─ next-arrow.png
+│  ├─ Notion-logo.png
+│  ├─ Pasted image.png
+│  ├─ Screenshot from 2025-11-23 23-09-45.png
+│  ├─ testimonials-person.png
+│  ├─ trust-chart.png
+│  ├─ unsplash-logo.png
+│  └─ Vector.png
+└─ src/
+   ├─ main.tsx
+   ├─ App.tsx
+   ├─ index.css
+   ├─ assets/
+   │  ├─ 4c8a9da61a41a42f6778ce275a3103d54783f85c.png
+   │  ├─ Rectangle 85.png
+   │  └─ react.svg
+   ├─ components/
+   │  ├─ CohortsSection.tsx
+   │  ├─ CommunitySection.tsx
+   │  ├─ Footer.tsx
+   │  ├─ Navbar.tsx
+   │  ├─ ScrollFadeIn.tsx
+   │  ├─ TestimonialSwiper.tsx
+   │  └─ WhoWeAre.tsx
+   └─ pages/
+      └─ Homepage.tsx
+```
+
+---
+
+## Notes
+
+- Static images live in `public/` (served directly).
+- App code lives in `src/`.
+- Page-level components live in `src/pages/`.
+- Reusable UI components live in `src/components/`.
+
+---
+
+## Contributing
+
+1. Create a new branch for your change
+2. Run `npm install` and `npm run dev`
+3. Before pushing, run:
+   - `npm run lint`
+   - `npm run build`
+
+---
+
+## License
+
+See the repository root for license information (if provided).
